@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+
+{% block title %}Dosdall Construction LLC - Building Legacies, Not Just Structures{% endblock %}
+{% block og_title %}Dosdall Construction LLC - Premium Construction Services{% endblock %}
+{% block og_description %}Premium construction services in Central MN. Custom homes, remodels, and additions by experienced contractors committed to quality craftsmanship.{% endblock %}
+
+{% block content %}
+<!-- Hero Section with Parallax Effect -->
+<section class="hero parallax" id="main-content">
+    <div class="hero-image"></div>
+    <div class="hero-content">
+        <h1>Building Legacies, Not Just Structures</h1>
+        <p class="hero-subtitle">Premium construction services in Central Minnesota. Where traditional craftsmanship meets modern innovation.</p>
+        <a href="{{ url_for('request_quote') }}" class="hero-cta">
+            <span>Get Your Free Quote</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+
+<!-- Key Services Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Our Expert Services</h2>
+        <p class="text-center" style="max-width: 600px; margin: 0 auto 3rem; font-size: 1.1rem;">
+            From custom lake homes to major renovations, we deliver exceptional craftsmanship with attention to every detail.
+        </p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <h3>General Contracting</h3>
+                <p>Complete project management and coordination for your construction needs. From permits to final inspection, we handle every aspect of your build.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Custom Lake Homes</h3>
+                <p>Bespoke lake home construction that maximizes your waterfront views while incorporating modern design and sustainable building practices.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Remodels & Additions</h3>
+                <p>Transform your existing space or expand your home with our expert renovation and addition services, tailored to Central MN living.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-drafting-compass"></i>
+                </div>
+                <h3>Design-Build</h3>
+                <p>Integrated design and construction services that streamline your project from concept to completion, saving time and ensuring quality.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Company Story Section -->
+<section class="section">
+    <div class="container">
+        <div class="company-story">
+            <div class="story-content">
+                <h2>Building on Generations of Trust</h2>
+                <p>Dosdall Construction LLC represents the culmination of a tradition passed down through generations of skilled craftsmen. As a local contractor from a long line of contractors, we understand the unique challenges and opportunities that come with building in Central Minnesota's beautiful landscape.</p>
+                
+                <p>Our commitment goes beyond construction—it's about improving the communities that have shaped us. We take pride in our Central MN heritage and the trust our neighbors place in us to bring their dreams to life, one project at a time.</p>
+                
+                <p>With over 20 years of experience, we've refined our approach to combine time-tested building methods with cutting-edge techniques, ensuring every structure we build stands as a testament to quality that will endure for generations.</p>
+                
+                <div style="margin-top: 2rem;">
+                    <a href="{{ url_for('about') }}" class="hero-cta" style="background: var(--text-primary);">
+                        <span>Learn Our Story</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="story-image">
+                <p>Company Heritage Photo Placeholder<br>20+ Years of Community Service</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Client Testimonials Carousel -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">What Our Clients Say</h2>
+        
+        <div class="testimonial-carousel">
+            <div class="testimonial-track">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Dosdall Construction transformed our lake home vision into reality. The attention to detail and craftsmanship exceeded our expectations. They truly understand what it means to build for generations."</p>
+                    <div class="testimonial-author">Sarah & Mike Millerhagan</div>
+                    <div class="testimonial-role">Star Lake Project</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"Working with Dosdall on our winter remodel was seamless. The custom kitchen addition with the glass garage door has become the centerpiece of our home. Outstanding work from start to finish."</p>
+                    <div class="testimonial-author">Tim & Jennifer Gurner</div>
+                    <div class="testimonial-role">Rush Lake Project</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"The Northwoods Retreat renovation perfectly blended rustic charm with modern family living. Dosdall's team was professional, punctual, and the quality of work is exceptional."</p>
+                    <div class="testimonial-author">David & Lisa Chen</div>
+                    <div class="testimonial-role">Northwoods Retreat</div>
+                </div>
+            </div>
+            
+            <div class="carousel-indicators">
+                <div class="indicator active"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Signature Projects</h2>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+            Explore our portfolio of exceptional projects that showcase our commitment to craftsmanship and innovation in Central Minnesota.
+        </p>
+        
+        <div class="projects-preview">
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3 class="project-title">The Millerhagan Project</h3>
+                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Star Lake</div>
+                    <p class="project-description">A stunning, custom three-story lake home featuring extensive glass to maximize lake views. This architectural masterpiece showcases our commitment to blending modern design with the natural beauty of Central Minnesota's lakefront properties.</p>
+                    <a href="{{ url_for('project_detail', project_id='millerhagan-star-lake') }}" class="project-link">
+                        View Full Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3 class="project-title">The Tim Gurner Lake Home</h3>
+                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Rush Lake</div>
+                    <p class="project-description">A major winter remodel featuring a professional-grade custom kitchen addition with a unique glass garage door that opens to the deck. This project demonstrates our ability to work year-round and create innovative solutions.</p>
+                    <a href="{{ url_for('project_detail', project_id='gurner-rush-lake') }}" class="project-link">
+                        View Full Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3 class="project-title">The Northwoods Retreat</h3>
+                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Central Minnesota</div>
+                    <p class="project-description">Full-service, high-efficiency renovation of a classic A-frame cabin, seamlessly blending rustic charm with modern family living. This project showcases our versatility in both traditional and contemporary construction.</p>
+                    <a href="{{ url_for('project_detail', project_id='northwoods-retreat') }}" class="project-link">
+                        View Full Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center" style="margin-top: 3rem;">
+            <a href="{{ url_for('projects') }}" class="hero-cta">
+                <span>View All Projects</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Insights Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Construction Insights & News</h2>
+        <p class="text-center" style="max-width: 600px; margin: 0 auto 3rem; font-size: 1.1rem;">
+            Stay informed with the latest trends, tips, and insights from our construction experts.
+        </p>
+        
+        <div class="insights-grid">
+            <div class="insight-card">
+                <div class="insight-image"></div>
+                <div class="insight-content">
+                    <div class="insight-date">October 15, 2024</div>
+                    <h4 class="insight-title">Building for Minnesota Winters: Essential Considerations</h4>
+                    <p class="insight-excerpt">Learn how to design and build homes that not only survive but thrive in our harsh Central Minnesota climate, from foundation considerations to energy efficiency.</p>
+                </div>
+            </div>
+            
+            <div class="insight-card">
+                <div class="insight-image"></div>
+                <div class="insight-content">
+                    <div class="insight-date">September 28, 2024</div>
+                    <h4 class="insight-title">The Future of Lake Home Design: Maximizing Waterfront Views</h4>
+                    <p class="insight-excerpt">Explore modern design trends that bring the beauty of your lakefront into every room while maintaining privacy and functionality.</p>
+                </div>
+            </div>
+            
+            <div class="insight-card">
+                <div class="insight-image"></div>
+                <div class="insight-content">
+                    <div class="insight-date">September 10, 2024</div>
+                    <h4 class="insight-title">Sustainable Construction Practices in Central Minnesota</h4>
+                    <p class="insight-excerpt">Discover how we're integrating eco-friendly materials and energy-efficient systems into our projects without compromising on quality or style.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center" style="margin-top: 3rem;">
+            <a href="{{ url_for('insights') }}" class="hero-cta">
+                <span>Read All Insights</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="section" style="background: var(--text-primary); color: white; text-align: center;">
+    <div class="container">
+        <h2 style="color: white; margin-bottom: 1.5rem;">Ready to Start Your Project?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Let's discuss your vision and create something extraordinary together. From initial concept to final walkthrough, we're here to build your legacy.
+        </p>
+        <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+            <a href="{{ url_for('request_quote') }}" class="hero-cta" style="background: var(--accent-color);">
+                <span>Request Free Quote</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="{{ url_for('contact') }}" class="hero-cta" style="background: transparent; border: 2px solid white; color: white;">
+                <span>Contact Us</span>
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Additional homepage-specific JavaScript can go here
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize any homepage-specific features
+    console.log('Dosdall Construction homepage loaded');
+});
+</script>
+{% endblock %}

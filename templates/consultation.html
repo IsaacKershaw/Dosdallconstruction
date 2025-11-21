@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Request Consultation{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/consultation-form.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="consultation-form-container">
+    <div class="form-header">
+        <h1>Request Your Consultation</h1>
+        <p>Get started with a personalized consultation. We'll help bring your vision to life.</p>
+    </div>
+    
+    <form id="consultationForm" class="consultation-form" method="POST" action="{{ url_for('request_consultation') }}">
+        <div class="form-group">
+            <label for="full_name" class="required">Full Name</label>
+            <input type="text" id="full_name" name="full_name" required 
+                   placeholder="Enter your full name">
+            <div class="error-message"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="email" class="required">Email Address</label>
+            <input type="email" id="email" name="email" required 
+                   placeholder="your.email@example.com">
+            <div class="error-message"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone" class="required">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required 
+                   placeholder="(555) 123-4567">
+            <div class="error-message"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="hear_about_us">How did you hear about us?</label>
+            <select id="hear_about_us" name="hear_about_us">
+                <option value="">Please select an option</option>
+                <option value="referral">Referral</option>
+                <option value="search_engine">Search Engine (Google)</option>
+                <option value="social_media">Social Media</option>
+                <option value="drove_past_site">Drove Past a Site</option>
+                <option value="other">Other</option>
+            </select>
+            <div class="error-message"></div>
+        </div>
+        
+        <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="goBack()">Back</button>
+            <button type="submit" class="btn btn-primary">Request Your Consultation</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Form Test</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #f5f5f5;
+        }
+        .test-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #e3f2fd;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>🧪 Quote Form Test Page</h1>
+            <p>This page tests the quote request form functionality without requiring a Flask server.</p>
+        </div>
+        
+        <div class="quote-form-container">
+            <div class="form-header">
+                <h1>Get Your Custom Quote</h1>
+                <p>Tell us about your project and we'll help bring your vision to life.</p>
+            </div>
+            
+            <form id="quoteForm" class="quote-form">
+                <div class="form-group">
+                    <label for="project_type" class="required">I'm interested in...</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="new_custom_home" name="project_type" value="new_custom_home" required>
+                            <label for="new_custom_home">New Custom Home</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="addition" name="project_type" value="addition" required>
+                            <label for="addition">Addition</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="remodel" name="project_type" value="remodel" required>
+                            <label for="remodel">Remodel</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="general_contracting" name="project_type" value="general_contracting_consultation" required>
+                            <label for="general_contracting">General Contracting/Consultation</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project_location" class="required">Project Location</label>
+                    <input type="text" id="project_location" name="project_location" required 
+                           placeholder="Simple street address or nearest town (e.g., "On Star Lake near Henning, MN")">
+                </div>
+                
+                <div class="form-group">
+                    <label for="project_description">Project Description</label>
+                    <textarea id="project_description" name="project_description" 
+                              placeholder="Briefly describe your dream project, e.g., 'A two-story lakeside addition with a new kitchen.'"></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-next">Continue to Step 2</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="../static/js/quote-form.js"></script>
+</body>
+</html>

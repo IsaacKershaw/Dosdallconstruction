@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosdall Construction LLC - Building Legacies, Not Just Structures</title>
+    <meta name="description" content="Premium construction services in Central MN. Custom homes, remodels, and additions by experienced contractors committed to quality craftsmanship.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ========================================
+           DOSDALL CONSTRUCTION LLC - MAIN STYLES
+           Modern, High-End, Professional Design
+           Mobile-First Responsive Approach
+        ======================================== */
+
+        /* CSS Variables for Brand Colors */
+        :root {
+          --primary-color: #1a1a1a; /* Black */
+          --secondary-color: #ffffff; /* White */
+          --accent-color: #007bff; /* Vibrant Medium Blue */
+          --accent-hover: #0056b3; /* Darker Blue */
+          --text-primary: #1a1a1a;
+          --text-secondary: #666666;
+          --text-light: #999999;
+          --background-light: #f8f9fa;
+          --border-color: #e9ecef;
+          --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+          --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
+          --shadow-heavy: 0 10px 40px rgba(0, 0, 0, 0.2);
+          
+          /* Typography */
+          --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          --font-serif: 'Crimson Text', Georgia, 'Times New Roman', serif;
+          
+          /* Spacing */
+          --container-max-width: 1200px;
+          --section-padding: 80px 0;
+          --section-padding-mobile: 60px 0;
+          
+          /* Transitions */
+          --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        /* Reset and Base Styles */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        html {
+          scroll-behavior: smooth;
+          font-size: 16px;
+        }
+
+        body {
+          font-family: var(--font-serif);
+          font-size: 1.1rem;
+          line-height: 1.7;
+          color: var(--text-primary);
+          background-color: var(--secondary-color);
+          overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+          max-width: var(--container-max-width);
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+          font-family: var(--font-sans);
+          font-weight: 600;
+          line-height: 1.2;
+          margin-bottom: 1rem;
+          color: var(--text-primary);
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+        h4 { font-size: clamp(1.25rem, 2.5vw, 1.8rem); }
+        h5 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
+        h6 { font-size: clamp(1rem, 1.8vw, 1.2rem); }
+
+        p {
+          margin-bottom: 1.5rem;
+          color: var(--text-secondary);
+        }
+
+        a {
+          color: var(--accent-color);
+          text-decoration: none;
+          transition: var(--transition-smooth);
+        }
+
+        a:hover {
+          color: var(--accent-hover);
+        }
+
+        /* Navigation */
+        .navbar {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(20px);
+          border-bottom: 1px solid var(--border-color);
+          z-index: 1000;
+          transition: var(--transition-smooth);
+        }
+
+        .navbar.scrolled {
+          background: rgba(255, 255, 255, 0.98);
+          box-shadow: var(--shadow-light);
+        }
+
+        .nav-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 20px;
+          max-width: var(--container-max-width);
+          margin: 0 auto;
+        }
+
+        .nav-logo h2 {
+          font-family: var(--font-sans);
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: var(--text-primary);
+          margin: 0;
+        }
+
+        .nav-logo .tagline {
+          font-size: 0.8rem;
+          color: var(--text-light);
+          font-weight: 400;
+        }
+
+        .nav-menu {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+        }
+
+        .nav-link {
+          font-family: var(--font-sans);
+          font-weight: 500;
+          color: var(--text-primary);
+          transition: var(--transition-smooth);
+          position: relative;
+        }
+
+        .nav-link:hover {
+          color: var(--accent-color);
+        }
+
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: var(--accent-color);
+          transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover::after {
+          width: 100%;
+        }
+
+        .cta-button {
+          background: var(--accent-color);
+          color: white !important;
+          padding: 0.75rem 1.5rem;
+          border-radius: 50px;
+          font-weight: 600;
+          transition: var(--transition-smooth);
+        }
+
+        .cta-button:hover {
+          background: var(--accent-hover);
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-medium);
+        }
+
+        .cta-button::after {
+          display: none;
+        }
+
+        .nav-toggle {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+          gap: 4px;
+        }
+
+        .bar {
+          width: 25px;
+          height: 3px;
+          background: var(--text-primary);
+          transition: var(--transition-smooth);
+        }
+
+        /* Hero Section */
+        .hero {
+          height: 100vh;
+          min-height: 600px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          overflow: hidden;
+        }
+
+        .hero::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="%23f0f0f0" stroke-width="1" opacity="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+          opacity: 0.1;
+        }
+
+        .hero-content {
+          text-align: center;
+          max-width: 800px;
+          padding: 0 20px;
+          z-index: 2;
+          position: relative;
+          animation: heroFadeIn 1.5s ease-out;
+        }
+
+        .hero h1 {
+          font-size: clamp(3rem, 6vw, 5rem);
+          font-weight: 700;
+          margin-bottom: 1.5rem;
+          background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          line-height: 1.1;
+        }
+
+        .hero-subtitle {
+          font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+          color: var(--text-secondary);
+          margin-bottom: 2.5rem;
+          font-weight: 400;
+        }
+
+        .hero-cta {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.75rem;
+          background: var(--accent-color);
+          color: white;
+          padding: 1rem 2.5rem;
+          border-radius: 50px;
+          font-family: var(--font-sans);
+          font-weight: 600;
+          font-size: 1.1rem;
+          transition: var(--transition-bounce);
+          box-shadow: var(--shadow-medium);
+        }
+
+        .hero-cta:hover {
+          background: var(--accent-hover);
+          transform: translateY(-3px) scale(1.02);
+          box-shadow: var(--shadow-heavy);
+          color: white;
+        }
+
+        /* Section Styles */
+        .section {
+          padding: var(--section-padding);
+          position: relative;
+        }
+
+        .section:nth-child(even) {
+          background: var(--background-light);
+        }
+
+        .section-title {
+          text-align: center;
+          margin-bottom: 3rem;
+          position: relative;
+        }
+
+        .section-title::after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 60px;
+          height: 3px;
+          background: var(--accent-color);
+          border-radius: 2px;
+        }
+
+        /* Services Section */
+        .services-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        .service-card {
+          background: white;
+          padding: 2.5rem 2rem;
+          border-radius: 20px;
+          text-align: center;
+          box-shadow: var(--shadow-light);
+          transition: var(--transition-bounce);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .service-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+          transition: var(--transition-smooth);
+        }
+
+        .service-card:hover {
+          transform: translateY(-10px);
+          box-shadow: var(--shadow-heavy);
+        }
+
+        .service-card:hover::before {
+          left: 100%;
+        }
+
+        .service-icon {
+          width: 80px;
+          height: 80px;
+          background: var(--accent-color);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1.5rem;
+          font-size: 2rem;
+          color: white;
+          transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .service-icon {
+          background: var(--accent-hover);
+          transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+          margin-bottom: 1rem;
+          color: var(--text-primary);
+        }
+
+        .service-card p {
+          color: var(--text-secondary);
+          line-height: 1.6;
+        }
+
+        /* Testimonial Carousel */
+        .testimonial-carousel {
+          position: relative;
+          max-width: 800px;
+          margin: 0 auto;
+          overflow: hidden;
+          border-radius: 20px;
+          background: white;
+          box-shadow: var(--shadow-medium);
+        }
+
+        .testimonial-track {
+          display: flex;
+          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .testimonial {
+          min-width: 100%;
+          padding: 3rem 2rem;
+          text-align: center;
+        }
+
+        .testimonial-text {
+          font-size: 1.3rem;
+          font-style: italic;
+          color: var(--text-secondary);
+          margin-bottom: 2rem;
+          line-height: 1.6;
+        }
+
+        .testimonial-author {
+          font-weight: 600;
+          color: var(--text-primary);
+          font-family: var(--font-sans);
+        }
+
+        .testimonial-role {
+          color: var(--text-light);
+          font-size: 0.9rem;
+        }
+
+        .carousel-indicators {
+          display: flex;
+          justify-content: center;
+          gap: 0.5rem;
+          padding: 1.5rem;
+        }
+
+        .indicator {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: var(--border-color);
+          cursor: pointer;
+          transition: var(--transition-smooth);
+        }
+
+        .indicator.active {
+          background: var(--accent-color);
+          transform: scale(1.2);
+        }
+
+        /* Responsive Design - Mobile First */
+        @media (max-width: 768px) {
+          :root {
+            --section-padding: var(--section-padding-mobile);
+          }
+          
+          .nav-menu {
+            position: fixed;
+            top: 70px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 70px);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 2rem;
+            transition: var(--transition-smooth);
+            gap: 2rem;
+          }
+          
+          .nav-menu.active {
+            left: 0;
+          }
+          
+          .nav-toggle {
+            display: flex;
+          }
+          
+          .nav-toggle.active .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+          }
+          
+          .nav-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+          }
+          
+          .nav-toggle.active .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+          }
+          
+          .hero {
+            min-height: 80vh;
+            padding: 2rem 0;
+          }
+          
+          .hero-content {
+            padding: 0 1rem;
+          }
+          
+          .hero-cta {
+            padding: 0.875rem 2rem;
+            font-size: 1rem;
+          }
+          
+          .services-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+          
+          .service-card {
+            padding: 2rem 1.5rem;
+          }
+          
+          .testimonial {
+            padding: 2rem 1.5rem;
+          }
+          
+          .testimonial-text {
+            font-size: 1.1rem;
+          }
+          
+          .container {
+            padding: 0 15px;
+          }
+        }
+
+        /* Animations */
+        @keyframes heroFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Dosdall Construction</h2>
+                <span class="tagline">LLC</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#quote" class="nav-link cta-button">Get Quote</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Building Legacies, Not Just Structures</h1>
+            <p class="hero-subtitle">Premium construction services in Central Minnesota. Where traditional craftsmanship meets modern innovation.</p>
+            <a href="#quote" class="hero-cta">
+                <span>Get Your Free Quote</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Key Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Expert Services</h2>
+            <p class="text-center" style="max-width: 600px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                From custom lake homes to major renovations, we deliver exceptional craftsmanship with attention to every detail.
+            </p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>General Contracting</h3>
+                    <p>Complete project management and coordination for your construction needs. From permits to final inspection, we handle every aspect of your build.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Custom Lake Homes</h3>
+                    <p>Bespoke lake home construction that maximizes your waterfront views while incorporating modern design and sustainable building practices.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Remodels & Additions</h3>
+                    <p>Transform your existing space or expand your home with our expert renovation and addition services, tailored to Central MN living.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Design-Build</h3>
+                    <p>Integrated design and construction services that streamline your project from concept to completion, saving time and ensuring quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials Carousel -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            
+            <div class="testimonial-carousel">
+                <div class="testimonial-track">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Dosdall Construction transformed our lake home vision into reality. The attention to detail and craftsmanship exceeded our expectations. They truly understand what it means to build for generations."</p>
+                        <div class="testimonial-author">Sarah & Mike Millerhagan</div>
+                        <div class="testimonial-role">Star Lake Project</div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Working with Dosdall on our winter remodel was seamless. The custom kitchen addition with the glass garage door has become the centerpiece of our home. Outstanding work from start to finish."</p>
+                        <div class="testimonial-author">Tim & Jennifer Gurner</div>
+                        <div class="testimonial-role">Rush Lake Project</div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">"The Northwoods Retreat renovation perfectly blended rustic charm with modern family living. Dosdall's team was professional, punctual, and the quality of work is exceptional."</p>
+                        <div class="testimonial-author">David & Lisa Chen</div>
+                        <div class="testimonial-role">Northwoods Retreat</div>
+                    </div>
+                </div>
+                
+                <div class="carousel-indicators">
+                    <div class="indicator active"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2>Building on Generations of Trust</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    Dosdall Construction LLC represents the culmination of a tradition passed down through generations of skilled craftsmen. As a local contractor from a long line of contractors, we understand the unique challenges and opportunities that come with building in Central Minnesota's beautiful landscape.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    With over 20 years of experience, we've refined our approach to combine time-tested building methods with cutting-edge techniques, ensuring every structure we build stands as a testament to quality that will endure for generations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container" style="text-align: center;">
+            <h2>Ready to Start Your Project?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Let's discuss your vision and create something extraordinary together. From initial concept to final walkthrough, we're here to build your legacy.
+            </p>
+            <a href="#quote" class="hero-cta">
+                <span>Request Free Quote</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="section" id="quote" style="background: var(--text-primary); color: white;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: white; margin-bottom: 1.5rem;">Get Your Free Quote</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; color: #cccccc;">
+                Contact us today for a personalized quote on your construction project.
+            </p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:3205550123" class="hero-cta" style="background: var(--accent-color);">
+                    <span>Call (320) 555-0123</span>
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="mailto:info@dosdallconstruction.com" class="hero-cta" style="background: transparent; border: 2px solid white; color: white;">
+                    <span>Email Us</span>
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // ========================================
+        // DOSDALL CONSTRUCTION LLC - MAIN JAVASCRIPT
+        // Interactive Features & Modern UX
+        // ========================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Navigation & Mobile Menu
+            const navbar = document.getElementById('navbar');
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            // Navbar scroll effect
+            let lastScrollY = window.scrollY;
+            
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                
+                lastScrollY = currentScrollY;
+            });
+            
+            // Mobile menu toggle
+            if (navToggle) {
+                navToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
+            }
+            
+            // Testimonial Carousel
+            const testimonialTrack = document.querySelector('.testimonial-track');
+            const testimonials = document.querySelectorAll('.testimonial');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentIndex = 0;
+            
+            function updateTestimonialCarousel() {
+                if (testimonialTrack && testimonials.length > 0) {
+                    const translateX = -currentIndex * 100;
+                    testimonialTrack.style.transform = `translateX(${translateX}%)`;
+                    
+                    indicators.forEach((indicator, index) => {
+                        indicator.classList.toggle('active', index === currentIndex);
+                    });
+                }
+            }
+            
+            function nextTestimonial() {
+                currentIndex = (currentIndex + 1) % testimonials.length;
+                updateTestimonialCarousel();
+            }
+            
+            function goToTestimonial(index) {
+                currentIndex = index;
+                updateTestimonialCarousel();
+            }
+            
+            // Auto-advance carousel every 6 seconds
+            if (testimonials.length > 0) {
+                setInterval(nextTestimonial, 6000);
+            }
+            
+            // Indicator click handlers
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => goToTestimonial(index));
+            });
+            
+            // Smooth scrolling for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(link.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Hover effects for cards
+            const cards = document.querySelectorAll('.service-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            console.log('Dosdall Construction LLC website loaded successfully!');
+        });
+    </script>
+</body>
+</html>

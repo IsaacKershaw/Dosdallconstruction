@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}Dosdall Construction LLC | Building Legacies in Central MN{% endblock %}
+
+{% block og_title %}Dosdall Construction LLC - Premium Construction Services{% endblock %}
+{% block og_description %}Central Minnesota's premier custom home builders, remodels, and additions. 20+ years of excellence in quality craftsmanship and client satisfaction.{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section" role="banner">
+    <div class="hero-content">
+        <h1 class="hero-title">Welcome to Dosdall Construction LLC</h1>
+        <p class="hero-description">Your trusted partner for custom homes, additions, remodels, and general contracting services in Central Minnesota.</p>
+        <div class="cta-section">
+            <a href="{{ url_for('request_quote') }}" class="btn btn-primary cta-button" aria-describedby="cta-description">Request Your Free Consultation</a>
+            <p id="cta-description" class="sr-only">Get a free quote for your construction project</p>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main id="main-content">
+    <!-- Statistics Section -->
+    <section class="counter-section" aria-label="Company statistics">
+        <div class="container">
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <span class="counter" data-target="20" aria-label="20 years">0</span>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="counter-item">
+                    <span class="counter" data-target="500" aria-label="500 projects">0</span>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="counter-item">
+                    <span class="counter" data-target="100" aria-label="100 percent">0</span>
+                    <p>Client Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" aria-labelledby="services-heading">
+        <div class="container">
+            <h2 id="services-heading" class="section-title">Our Premium Services</h2>
+            <p class="section-description">Exceptional craftsmanship meets personalized service</p>
+            <div class="services-grid">
+                <article class="service-card" tabindex="0">
+                    <div class="service-icon">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                    </div>
+                    <h3>New Custom Homes</h3>
+                    <p>Build your dream home from the ground up with our expert construction team. Every detail crafted to perfection.</p>
+                    <a href="{{ url_for('services') }}" class="service-link" aria-label="Learn more about custom home building">Learn More</a>
+                </article>
+                <article class="service-card" tabindex="0">
+                    <div class="service-icon">
+                        <i class="fas fa-expand-arrows-alt" aria-hidden="true"></i>
+                    </div>
+                    <h3>Home Additions</h3>
+                    <p>Expand your living space seamlessly with our high-quality addition services that blend perfectly with your existing home.</p>
+                    <a href="{{ url_for('services') }}" class="service-link" aria-label="Learn more about home additions">Learn More</a>
+                </article>
+                <article class="service-card" tabindex="0">
+                    <div class="service-icon">
+                        <i class="fas fa-hammer" aria-hidden="true"></i>
+                    </div>
+                    <h3>Comprehensive Remodeling</h3>
+                    <p>Transform your existing space with our comprehensive remodeling expertise, bringing new life to your home.</p>
+                    <a href="{{ url_for('services') }}" class="service-link" aria-label="Learn more about home remodeling">Learn More</a>
+                </article>
+                <article class="service-card" tabindex="0">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat" aria-hidden="true"></i>
+                    </div>
+                    <h3>General Contracting</h3>
+                    <p>Professional consultation and project management for all your construction needs with guaranteed quality results.</p>
+                    <a href="{{ url_for('services') }}" class="service-link" aria-label="Learn more about general contracting">Learn More</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" aria-labelledby="testimonials-heading">
+        <div class="container">
+            <h2 id="testimonials-heading" class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-container" role="region" aria-label="Client testimonials">
+                <div class="testimonial-carousel" role="list" aria-live="polite">
+                    <article class="testimonial" role="listitem">
+                        <blockquote>
+                            <p>"Dosdall Construction built our dream home exactly as we envisioned. Outstanding craftsmanship and service!"</p>
+                        </blockquote>
+                        <cite>- Sarah & John M., Custom Lake Home</cite>
+                    </article>
+                    <article class="testimonial" role="listitem">
+                        <blockquote>
+                            <p>"Professional, reliable, and the quality of work exceeded our expectations. Highly recommended!"</p>
+                        </blockquote>
+                        <cite>- Mike D., Kitchen Remodel</cite>
+                    </article>
+                    <article class="testimonial" role="listitem">
+                        <blockquote>
+                            <p>"From concept to completion, Dosdall delivered exceptional results on our home addition. True professionals."</p>
+                        </blockquote>
+                        <cite>- Jennifer K., Home Addition</cite>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section-main" aria-labelledby="cta-main-heading">
+        <div class="container">
+            <div class="cta-content">
+                <h2 id="cta-main-heading" class="cta-title">Ready to Start Your Project?</h2>
+                <p class="cta-description">Get a free consultation and quote for your construction needs. Let's build something amazing together.</p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('request_quote') }}" class="btn btn-primary btn-large">Request Your Free Quote</a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-secondary btn-large">Contact Us Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

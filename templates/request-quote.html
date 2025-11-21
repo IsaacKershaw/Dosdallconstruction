@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}Request Quote{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/quote-form.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="quote-form-container">
+    <div class="form-header">
+        <h1>Get Your Custom Quote</h1>
+        <p>Tell us about your project and we'll help bring your vision to life.</p>
+        <div class="form-progress">
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">1</div>
+                <div class="progress-step" data-step="2">2</div>
+                <div class="progress-step" data-step="3">3</div>
+            </div>
+        </div>
+    </div>
+    
+    <form id="quoteForm" class="quote-form" method="POST" action="{{ url_for('request_quote') }}">
+        <!-- Step 1 -->
+        <div class="form-step active" id="step1">
+            <h2>Step 1: Project Details</h2>
+            
+            <div class="form-group">
+                <label for="project_type" class="required">I'm interested in...</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="new_custom_home" name="project_type" value="new_custom_home" required>
+                        <label for="new_custom_home">New Custom Home</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="addition" name="project_type" value="addition" required>
+                        <label for="addition">Addition</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="remodel" name="project_type" value="remodel" required>
+                        <label for="remodel">Remodel</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="general_contracting" name="project_type" value="general_contracting_consultation" required>
+                        <label for="general_contracting">General Contracting/Consultation</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="project_location" class="required">Project Location</label>
+                <input type="text" id="project_location" name="project_location" required 
+                       placeholder="Simple street address or nearest town (e.g., "On Star Lake near Henning, MN")">
+            </div>
+            
+            <div class="form-group">
+                <label for="project_description">Project Description</label>
+                <textarea id="project_description" name="project_description" 
+                          placeholder="Briefly describe your dream project, e.g., 'A two-story lakeside addition with a new kitchen.'"></textarea>
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" class="btn btn-primary btn-next" onclick="nextStep()">Continue to Step 2</button>
+            </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="form-step" id="step2">
+            <h2>Step 2: Project Timeline & Budget</h2>
+            
+            <div class="form-group">
+                <label for="ideal_start_date">Ideal Start Date</label>
+                <input type="date" id="ideal_start_date" name="ideal_start_date" 
+                       placeholder="When are you hoping to break ground?">
+            </div>
+            
+            <div class="form-group">
+                <label for="project_status" class="required">Project Status</label>
+                <select id="project_status" name="project_status" required>
+                    <option value="">Select your current status</option>
+                    <option value="i_have_plans_architect">I have plans/architect</option>
+                    <option value="ready_to_hire_contractor">Ready to hire a contractor</option>
+                    <option value="just_exploring_ideas">Just exploring ideas</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="estimated_budget" class="required">Estimated Budget Range</label>
+                <select id="estimated_budget" name="estimated_budget" required>
+                    <option value="">Select your budget range</option>
+                    <option value="under_50k">Under $50k</option>
+                    <option value="50k_150k">$50k - $150k</option>
+                    <option value="150k_400k">$150k - $400k</option>
+                    <option value="over_400k">Over $400k</option>
+                </select>
+                <small class="form-help">This helps us provide you with accurate service options</small>
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary btn-prev" onclick="prevStep()">Back</button>
+                <button type="button" class="btn btn-primary btn-next" onclick="nextStep()">Continue to Step 3</button>
+            </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="form-step" id="step3">
+            <h2>Step 3: Contact Information</h2>
+            <p>Please provide your contact information so we can discuss your project.</p>
+            
+            <div class="form-group">
+                <label for="contact_name" class="required">Full Name</label>
+                <input type="text" id="contact_name" name="contact_name" required 
+                       placeholder="Your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="contact_email" class="required">Email Address</label>
+                <input type="email" id="contact_email" name="contact_email" required 
+                       placeholder="your.email@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="contact_phone" class="required">Phone Number</label>
+                <input type="tel" id="contact_phone" name="contact_phone" required 
+                       placeholder="(555) 123-4567">
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary btn-prev" onclick="prevStep()">Back</button>
+                <button type="submit" class="btn btn-primary">Submit Quote Request</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

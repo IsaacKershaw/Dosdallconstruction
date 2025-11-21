@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Dosdall Construction LLC{% endblock %}
+{% block og_title %}Contact Dosdall Construction - Central Minnesota's Premier Construction Company{% endblock %}
+{% block og_description %}Get in touch with our construction experts. Serving Central Minnesota with quality craftsmanship for over 20 years.{% endblock %}
+
+{% block content %}
+<!-- Contact Hero -->
+<section class="hero parallax" style="height: 60vh; min-height: 500px;">
+    <div class="hero-image"></div>
+    <div class="hero-content">
+        <h1>Let's Build Something Together</h1>
+        <p class="hero-subtitle">Ready to start your construction project? We're here to help bring your vision to life.</p>
+    </div>
+</section>
+
+<!-- Contact Information Section -->
+<section class="section">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem;">
+            
+            <!-- Contact Form -->
+            <div>
+                <h2 style="margin-bottom: 2rem;">Get In Touch</h2>
+                <form style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: var(--shadow-light);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">First Name *</label>
+                            <input type="text" name="first_name" required style="width: 100%; padding: 1rem; border: 2px solid var(--border-color); border-radius: 10px; font-size: 1rem; transition: var(--transition-smooth);">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Last Name *</label>
+                            <input type="text" name="last_name" required style="width: 100%; padding: 1rem; border: 2px solid var(--border-color); border-radius: 10px; font-size: 1rem; transition: var(--transition-smooth);">
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Email Address *</label>
+                        <input type="email" name="email" required style="width: 100%; padding: 1rem; border: 2px solid var(--border-color); border-radius: 10px; font-size: 1rem; transition: var(--transition-smooth);">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Phone Number</label>
+                        <input type="tel" name="phone" style="width: 100%; padding: 1rem; border: 2px solid var(--border-color); border-radius: 10px; font-size: 1rem; transition: var(--transition-smooth);">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Subject</label>
+                        <select name="subject" style="width: 100%; padding: 1rem; border: 2px solid var(--border-color); border-radius: 10px; font-size: 1rem; transition: var(--transition-smooth);">
+                            <option value="">Select a subject</option>
+                            <option value="quote">Request a Quote</option>
+                            <option value="consultation">Free Consultation</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="existing">Existing Project</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Message *</label>
+                        <textarea name="message" rows="5" required placeholder="Tell us about your project or ask us anything..." style="width: 100%; padding: 1rem; border: 2px solid var(--border-color); border-radius: 10px; font-size: 1rem; transition: var(--transition-smooth); resize: vertical;"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="hero-cta" style="background: var(--accent-color); width: 100%;">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Contact Information -->
+            <div>
+                <h2 style="margin-bottom: 2rem;">Contact Information</h2>
+                
+                <div style="background: var(--background-light); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Office Information</h3>
+                    
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+                        <i class="fas fa-map-marker-alt" style="font-size: 1.5rem; color: var(--accent-color); margin-right: 1rem; margin-top: 0.25rem;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">Address</h4>
+                            <p style="color: var(--text-secondary); margin: 0;">123 Construction Drive<br>St. Cloud, MN 56301</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+                        <i class="fas fa-phone" style="font-size: 1.5rem; color: var(--accent-color); margin-right: 1rem; margin-top: 0.25rem;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">Phone</h4>
+                            <p style="color: var(--text-secondary); margin: 0;">(320) 555-0123</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+                        <i class="fas fa-envelope" style="font-size: 1.5rem; color: var(--accent-color); margin-right: 1rem; margin-top: 0.25rem;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">Email</h4>
+                            <p style="color: var(--text-secondary); margin: 0;">info@dosdallconstruction.com</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start;">
+                        <i class="fas fa-clock" style="font-size: 1.5rem; color: var(--accent-color); margin-right: 1rem; margin-top: 0.25rem;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">Business Hours</h4>
+                            <p style="color: var(--text-secondary); margin: 0;">Monday - Friday: 7:00 AM - 6:00 PM<br>Saturday: 8:00 AM - 4:00 PM<br>Sunday: Emergency calls only</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: var(--text-primary); color: white; padding: 2rem; border-radius: 15px; text-align: center;">
+                    <h3 style="color: white; margin-bottom: 1rem;">Need Immediate Assistance?</h3>
+                    <p style="margin-bottom: 1.5rem; color: #cccccc;">For urgent construction needs or emergency repairs, call us directly.</p>
+                    <a href="tel:3205550123" class="hero-cta" style="background: var(--accent-color); display: inline-flex;">
+                        <span>Call Now</span>
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service Areas Section -->
+<section class="section" style="background: var(--background-light);">
+    <div class="container">
+        <h2 class="section-title">Service Areas</h2>
+        <p class="text-center" style="max-width: 600px; margin: 0 auto 3rem; font-size: 1.1rem;">
+            We proudly serve Central Minnesota and surrounding communities
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+            <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 15px; box-shadow: var(--shadow-light);">
+                <i class="fas fa-map-pin" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h4>St. Cloud</h4>
+            </div>
+            <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 15px; box-shadow: var(--shadow-light);">
+                <i class="fas fa-map-pin" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h4>Alexandria</h4>
+            </div>
+            <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 15px; box-shadow: var(--shadow-light);">
+                <i class="fas fa-map-pin" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h4>Brainerd</h4>
+            </div>
+            <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 15px; box-shadow: var(--shadow-light);">
+                <i class="fas fa-map-pin" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h4>Little Falls</h4>
+            </div>
+            <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 15px; box-shadow: var(--shadow-light);">
+                <i class="fas fa-map-pin" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h4>Willmar</h4>
+            </div>
+            <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 15px; box-shadow: var(--shadow-light);">
+                <i class="fas fa-map-pin" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h4>Waite Park</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section">
+    <div class="container" style="text-align: center;">
+        <h2>Ready to Start Your Project?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Get your free quote today and discover why homeowners across Central Minnesota trust Dosdall Construction.
+        </p>
+        <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+            <a href="{{ url_for('request_quote') }}" class="hero-cta" style="background: var(--accent-color);">
+                <span>Get Free Quote</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="tel:3205550123" class="hero-cta" style="background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color);">
+                <span>Call (320) 555-0123</span>
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Map Placeholder -->
+<section style="padding: 0;">
+    <div style="height: 400px; background: var(--background-light); display: flex; align-items: center; justify-content: center; color: var(--text-light); font-size: 1.2rem;">
+        <div style="text-align: center;">
+            <i class="fas fa-map-marked-alt" style="font-size: 4rem; margin-bottom: 1rem; display: block;"></i>
+            <p>Interactive Map Coming Soon</p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Serving Central Minnesota</p>
+        </div>
+    </div>
+</section>
+
+<style>
+input:focus, select:focus, textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .container > div:first-of-type {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    form {
+        padding: 2rem 1.5rem !important;
+    }
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Form submission handler
+    const contactForm = document.querySelector('form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+            submitButton.disabled = true;
+            
+            try {
+                // Simulate form submission (replace with actual endpoint)
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Show success message
+                this.innerHTML = `
+                    <div style="text-align: center; padding: 3rem 2rem;">
+                        <i class="fas fa-check-circle" style="font-size: 4rem; color: #28a745; margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Message Sent Successfully!</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                        <a href="${window.location.href}" class="hero-cta" style="background: var(--accent-color); display: inline-flex;">
+                            <span>Send Another Message</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                `;
+            } catch (error) {
+                // Show error state
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+                alert('There was an error sending your message. Please try again or call us directly.');
+            }
+        });
+    }
+});
+</script>
+{% endblock %}

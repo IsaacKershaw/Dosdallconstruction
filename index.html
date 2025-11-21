@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosdall Construction LLC | Building Legacies in Central MN</title>
+    <meta name="description" content="Central Minnesota's premier custom home builders, remodels, and additions. 20+ years of excellence in quality craftsmanship and client satisfaction.">
+    
+    <style>
+        /* CSS Variables for theming */
+        :root {
+            --primary-black: #000000;
+            --primary-white: #ffffff;
+            --primary-blue: #1e3a8a;
+            --blue-light: #3b82f6;
+            --blue-dark: #1e40af;
+            --gray-light: #f8fafc;
+            --gray-medium: #64748b;
+            --gray-dark: #1e293b;
+            --transition-fast: 0.3s;
+            --transition-normal: 0.5s;
+            --transition-slow: 0.8s;
+            --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-large: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: var(--gray-dark);
+            background-color: var(--primary-white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--primary-black);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-blue);
+            color: var(--primary-white);
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 1000;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e2e8f0;
+            transition: all var(--transition-normal) ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .nav-logo h2 {
+            color: var(--primary-blue);
+            font-size: 1.75rem;
+            margin-bottom: 2px;
+        }
+
+        .nav-logo span {
+            color: var(--gray-medium);
+            font-size: 0.875rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: var(--gray-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-fast) ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-light));
+            color: var(--primary-white);
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all var(--transition-normal) ease;
+            box-shadow: var(--shadow-small);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray-dark);
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: var(--primary-white);
+            border-top: 1px solid #e2e8f0;
+            padding: 16px 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            color: var(--gray-dark);
+            text-decoration: none;
+            padding: 8px 0;
+            font-weight: 500;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--gray-light) 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23e2e8f0" opacity="0.1"/><circle cx="80" cy="40" r="0.5" fill="%23cbd5e1" opacity="0.1"/><circle cx="40" cy="80" r="1.5" fill="%23e2e8f0" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--primary-black);
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .hero-description {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            color: var(--gray-medium);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-light));
+            color: var(--primary-white);
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 600;
+            display: inline-block;
+            transition: all var(--transition-normal) ease;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left var(--transition-slow) ease;
+        }
+
+        .hero-cta:hover::before {
+            left: 100%;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-large);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background: var(--primary-white);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--primary-blue);
+            margin-bottom: 16px;
+        }
+
+        .section-description {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--gray-medium);
+            margin-bottom: 64px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: var(--primary-white);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-small);
+            border: 1px solid #f1f5f9;
+            text-align: center;
+            transition: all var(--transition-normal) ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: var(--primary-white);
+            font-size: 2rem;
+            transition: all var(--transition-normal) ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 16px;
+        }
+
+        .service-description {
+            color: var(--gray-medium);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .service-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color var(--transition-fast) ease;
+        }
+
+        .service-link:hover {
+            color: var(--blue-light);
+        }
+
+        /* Company Story Section */
+        .story-section {
+            padding: 80px 0;
+            background: var(--gray-light);
+        }
+
+        .story-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .story-title {
+            text-align: center;
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--primary-blue);
+            margin-bottom: 64px;
+        }
+
+        .story-card {
+            background: var(--primary-white);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-small);
+            margin-bottom: 24px;
+            transition: all var(--transition-normal) ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--gray-dark);
+        }
+
+        /* Featured Projects Section */
+        .projects-section {
+            padding: 80px 0;
+            background: var(--primary-white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .project-card {
+            background: var(--gray-light);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-small);
+            transition: all var(--transition-normal) ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-white);
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 24px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+        }
+
+        .project-description {
+            color: var(--gray-medium);
+            margin-bottom: 16px;
+        }
+
+        .project-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all var(--transition-slow) ease;
+        }
+
+        .fade-in-up.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all var(--transition-slow) ease;
+        }
+
+        .slide-in-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all var(--transition-slow) ease;
+        }
+
+        .slide-in-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content {
+                padding: 0 16px;
+            }
+
+            .section-container {
+                padding: 0 16px;
+            }
+
+            .services-section,
+            .story-section,
+            .projects-section {
+                padding: 60px 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <h2>Dosdall Construction</h2>
+                    <span>LLC</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#quote" class="cta-button">Get Quote</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="nav-container">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#quote" class="cta-button">Get Quote</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title fade-in-up">Welcome to Dosdall Construction LLC</h1>
+            <p class="hero-description fade-in-up">Your trusted partner for custom homes, additions, remodels, and general contracting services in Central Minnesota.</p>
+            <a href="#services" class="hero-cta fade-in-up">Explore Our Services</a>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <div class="section-container">
+                <h2 class="section-title fade-in-up">Our Key Services</h2>
+                <p class="section-description fade-in-up">Exceptional craftsmanship meets personalized service</p>
+                <div class="services-grid">
+                    <article class="service-card fade-in-up">
+                        <div class="service-icon">🏠</div>
+                        <h3 class="service-title">New Custom Homes</h3>
+                        <p class="service-description">Build your dream home from the ground up with our expert construction team. Every detail crafted to perfection.</p>
+                        <a href="#contact" class="service-link">Learn More</a>
+                    </article>
+                    
+                    <article class="service-card fade-in-up">
+                        <div class="service-icon">🏗️</div>
+                        <h3 class="service-title">Home Additions</h3>
+                        <p class="service-description">Expand your living space seamlessly with our high-quality addition services that blend perfectly with your existing home.</p>
+                        <a href="#contact" class="service-link">Learn More</a>
+                    </article>
+                    
+                    <article class="service-card fade-in-up">
+                        <div class="service-icon">🔨</div>
+                        <h3 class="service-title">Comprehensive Remodeling</h3>
+                        <p class="service-description">Transform your existing space with our comprehensive remodeling expertise, bringing new life to your home.</p>
+                        <a href="#contact" class="service-link">Learn More</a>
+                    </article>
+                    
+                    <article class="service-card fade-in-up">
+                        <div class="service-icon">👷</div>
+                        <h3 class="service-title">General Contracting</h3>
+                        <p class="service-description">Professional consultation and project management for all your construction needs with guaranteed quality results.</p>
+                        <a href="#contact" class="service-link">Learn More</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Company Story Section -->
+        <section class="story-section" id="about">
+            <div class="section-container">
+                <h2 class="story-title fade-in-up">Our Story</h2>
+                <div class="story-content">
+                    <div class="story-card fade-in-up">
+                        <p class="story-text">In Central Minnesota, the Dosdall name has been synonymous with exceptional craftsmanship for generations. Our commitment is rooted in a deep, inherited pride for the structures we build—a legacy passed down through a long line of local builders. We understand that a home is more than just square footage; it is the foundation for your family's future, and we approach every project with this profound responsibility in mind.</p>
+                    </div>
+                    
+                    <div class="story-card fade-in-up">
+                        <p class="story-text">We blend this old-world dedication with the best of modern design and construction efficiency. Specializing in luxury lake home additions and complex custom remodels, we leverage cutting-edge materials and precision techniques to deliver spaces that are beautiful, sustainable, and engineered to thrive in the Minnesota climate. Our mission is to take your vision—no matter how ambitious—and translate it into an architectural reality.</p>
+                    </div>
+                    
+                    <div class="story-card fade-in-up">
+                        <p class="story-text">As a local contractor, our success is tied directly to the vitality of our community. We operate on a foundation of transparent communication and true partnership, working with you from concept to completion. By choosing Dosdall Construction, you are not just hiring a contractor; you are collaborating with a dedicated team focused on enhancing the homes and lives right here in Central MN.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Featured Projects Section -->
+        <section class="projects-section" id="projects">
+            <div class="section-container">
+                <h2 class="section-title fade-in-up">Featured Projects</h2>
+                <p class="section-description fade-in-up">Showcasing our finest work and achievements</p>
+                <div class="projects-grid">
+                    <article class="project-card fade-in-up">
+                        <div class="project-image">🏖️</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Lake Home Masterpiece</h3>
+                            <p class="project-description">A stunning custom lake home addition featuring modern design elements while maintaining the rustic charm of the original structure.</p>
+                            <a href="#contact" class="project-link">View Details</a>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card fade-in-up">
+                        <div class="project-image">🏡</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Luxury Kitchen Remodel</h3>
+                            <p class="project-description">Complete kitchen transformation with custom cabinetry, modern appliances, and an open-concept design that maximizes space and functionality.</p>
+                            <a href="#contact" class="project-link">View Details</a>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card fade-in-up">
+                        <div class="project-image">🏘️</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Historic Home Restoration</h3>
+                            <p class="project-description">Careful restoration of a century-old home, preserving historical character while updating all systems and adding modern amenities.</p>
+                            <a href="#contact" class="project-link">View Details</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact/Quote Section -->
+        <section class="story-section" id="contact">
+            <div class="section-container">
+                <h2 class="story-title fade-in-up">Ready to Start Your Project?</h2>
+                <div class="story-content">
+                    <div class="story-card fade-in-up">
+                        <p class="story-text" style="text-align: center; font-size: 1.25rem;">Get started on your construction project today. Contact us for a free consultation and quote.</p>
+                        <div style="text-align: center; margin-top: 32px;">
+                            <a href="#quote" class="hero-cta" style="margin: 0 16px;">Request Quote</a>
+                            <a href="tel:(320)555-0123" class="service-link" style="font-size: 1.125rem; margin: 0 16px;">(320) 555-0123</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        // ========================================
+        // ENHANCED JAVASCRIPT FUNCTIONALITY
+        // ========================================
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // ================================
+            // PERFORMANCE UTILITIES
+            // ================================
+            function throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                };
+            }
+            
+            // ================================
+            // NAVIGATION & MOBILE MENU
+            // ================================
+            const navbar = document.getElementById('navbar');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let lastScrollY = window.scrollY;
+            
+            // Navbar scroll effect
+            const handleNavbarScroll = throttle(() => {
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                
+                // Hide/show navbar on scroll
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollY = currentScrollY;
+            }, 16);
+            
+            window.addEventListener('scroll', handleNavbarScroll);
+            
+            // Mobile menu toggle
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('show');
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(link.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu.classList.contains('show')) {
+                        mobileMenu.classList.remove('show');
+                    }
+                });
+            });
+            
+            // ================================
+            // PARALLAX SCROLLING EFFECTS
+            // ================================
+            const heroSection = document.querySelector('.hero-section');
+            const parallaxElements = [heroSection];
+            
+            const updateParallax = throttle(() => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.3;
+                
+                parallaxElements.forEach(element => {
+                    if (element && window.innerWidth > 768) {
+                        element.style.transform = `translateY(${rate}px)`;
+                    }
+                });
+            }, 16);
+            
+            if (parallaxElements[0]) {
+                window.addEventListener('scroll', updateParallax);
+            }
+            
+            // ================================
+            // SCROLL ANIMATIONS
+            // ================================
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all fade-in-up elements
+            const animatedElements = document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right');
+            animatedElements.forEach((element, index) => {
+                setTimeout(() => {
+                    observer.observe(element);
+                }, index * 100);
+            });
+            
+            // ================================
+            // ENHANCED INTERACTIONS
+            // ================================
+            
+            // Service card interactions
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Project card interactions
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // ================================
+            // ACCESSIBILITY ENHANCEMENTS
+            // ================================
+            
+            // Skip to main content link functionality
+            const skipLink = document.querySelector('.skip-link');
+            if (skipLink) {
+                skipLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const mainContent = document.getElementById('main-content');
+                    if (mainContent) {
+                        mainContent.focus();
+                        mainContent.scrollIntoView();
+                    }
+                });
+            }
+            
+            // Keyboard navigation for service cards
+            serviceCards.forEach(card => {
+                card.setAttribute('tabindex', '0');
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const link = card.querySelector('.service-link');
+                        if (link) {
+                            link.click();
+                        }
+                    }
+                });
+            });
+            
+            // ================================
+            // PERFORMANCE MONITORING
+            // ================================
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    if ('performance' in window) {
+                        const perfData = performance.getEntriesByType('navigation')[0];
+                        console.log(`Page load time: ${perfData.loadEventEnd - perfData.loadEventStart}ms`);
+                    }
+                }, 0);
+            });
+            
+            // ================================
+            // REDUCED MOTION SUPPORT
+            // ================================
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            
+            function handleReducedMotion() {
+                if (prefersReducedMotion.matches) {
+                    document.documentElement.style.setProperty('--transition-fast', '0.01ms');
+                    document.documentElement.style.setProperty('--transition-normal', '0.01ms');
+                    document.documentElement.style.setProperty('--transition-slow', '0.01ms');
+                }
+            }
+            
+            prefersReducedMotion.addListener(handleReducedMotion);
+            handleReducedMotion();
+            
+            // ================================
+            // INITIALIZE MOBILE MENU STYLES
+            // ================================
+            // Add mobile menu show class styles
+            const style = document.createElement('style');
+            style.textContent = `
+                .mobile-menu.show {
+                    display: block !important;
+                    animation: slideDown 0.3s ease;
+                }
+                
+                @keyframes slideDown {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            console.log('Dosdall Construction LLC website initialized with enhanced features!');
+        });
+    </script>
+</body>
+</html>
